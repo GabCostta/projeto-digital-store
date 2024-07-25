@@ -1,3 +1,4 @@
+@ -0,0 +1,617 @@
 # 1 - Sugestão para estrutura de pastas
 
 - Com o objetivo de organizar o projeto estruture o projeto de modo que dentro da pasta "src" existam as pastas dos componentes chamada `components` e a pasta de paginas chamada `pages`. Na pasta `components` devem ser criados os componentes funcionais do projeto e na `pasta` page deve conter cada aba da pagina da loja `drip-store`, contendo somente a chamada dos componentes criados. Essa organização facilitará a criação de rotas dentro do arquivo `App.js`.
@@ -614,4 +615,3 @@ Dentro do componente `<Section />` deve ser passado como filho o componente `<Pr
 ![layout-product-view-page](./doc/layout/product-view-page.png)
 </details>
 </details>
-
