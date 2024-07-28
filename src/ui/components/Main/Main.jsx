@@ -2,7 +2,7 @@ import "../Main/Main.css"
 import { Link } from "react-router-dom";
 import gmail from "../../assets/img/gmail.svg";
 import facebook from "../../assets/img/facebook.svg";
-import sapatos from "../../assets/img/sapatosCriarConta.png";
+import sapatos from "../../assets/img/dois_tenis_nike.png";
 
 
 function Main() {
@@ -10,7 +10,7 @@ function Main() {
   return (
     <>
       <main>
-        <div className="formulario">
+        <div className="formulario card-formulario">
           <div className="title">
             <h1>Acesse sua conta</h1>
             <p>Novo cliente? Então registre-se <Link to="/Registrar">aqui</Link>.</p>
