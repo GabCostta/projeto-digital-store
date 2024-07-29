@@ -1,8 +1,8 @@
-import "../Footer/Footer.css";
-import logoDigitalCollege from '../../assets/img/logoDigitalCollege.svg';
-import iconFacebook from '../../assets/img/iconFacebook.svg';
-import iconInstagram from '../../assets/img/iconInstagram.svg';
-import iconTwitter from '../../assets/img/iconTwitter.svg';
+import "@styles/Components/Footer/Footer.css";
+import logoDigitalCollege from '@assets/img/logoDigitalCollege.svg';
+import iconFacebook from '@assets/img/iconFacebook.svg';
+import iconInstagram from '@assets/img/iconInstagram.svg';
+import iconTwitter from '@assets/img/iconTwitter.svg';
 import { Link } from "react-router-dom";
 
 

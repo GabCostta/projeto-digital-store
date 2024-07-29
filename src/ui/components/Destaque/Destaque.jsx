@@ -1,5 +1,5 @@
-import ImageSapato from '../../assets/img/image.png'
-import './Destaque.css'
+import ImageSapato from '@assets/img/image.png'
+import '@styles/Components//Destaque/Destaque.css'
 import { Link } from "react-router-dom";
 
 export function Destaque() {
@@ -23,3 +23,4 @@ export function Destaque() {
     )
 }
 
+export default Destaque

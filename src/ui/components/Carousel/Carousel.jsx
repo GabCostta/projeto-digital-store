@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "../Carousel/Carousel.css";
-import sapato from "../../assets/img/sapato_carousel.svg";
-import ilustracao from "../../assets/img/ornament.svg";
-import fire from "../../assets/img/fire.png";
+import "@styles/Components/Carousel/Carousel.css";
+import sapato from "@assets/img/sapato_carousel.svg";
+import ilustracao from "@assets/img/ornament.svg";
+import fire from "@assets/img/fire.png";
 import { Link } from "react-router-dom";
 
 function Carousel() {

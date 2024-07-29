@@ -1,7 +1,7 @@
-import "../CardDestaque/CardDestaque.css"
-import blusa from "../../assets/img/blusa.png"
-import tenis from "../../assets/img/tenis.png"
-import fone from "../../assets/img/fone de ouvido.png"
+import "@styles/Components/CardDestaque/CardDestaque.css"
+import blusa from "@assets/img/blusa.png"
+import tenis from "@assets/img/tenis.png"
+import fone from "@assets/img/fone de ouvido.png"
 
 
 function CardDestaque() {

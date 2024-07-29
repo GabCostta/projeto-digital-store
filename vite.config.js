@@ -1,10 +1,17 @@
-// vite.config.js
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  // ...outras configurações
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@components': '/src/ui/Components',
+      '@pages': '/src/ui/pages',
+      '@styles': '/src/ui/styles',
+      '@assets': '/src/assets',
+    },
+  },
   css: {
-    // certifique-se de que está configurado para processar CSS
     postcss: {},
   },
 });

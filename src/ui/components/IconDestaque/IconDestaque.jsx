@@ -1,9 +1,9 @@
-import "../IconDestaque/IconDestaque.css"
-import camisa from '../../assets/img/blusa_destaque.svg'
-import calca from '../../assets/img/calca_destaque.svg'
-import bone from '../../assets/img/bone_destaque.svg'
-import headphone from '../../assets/img/fone_destaque.svg'
-import tenis from '../../assets/img/sapato_destaque.svg'
+import "@styles/Components/IconDestaque/IconDestaque.css"
+import camisa from '@assets/img/blusa_destaque.svg'
+import calca from '@assets/img/calca_destaque.svg'
+import bone from '@assets/img/bone_destaque.svg'
+import headphone from '@assets/img/fone_destaque.svg'
+import tenis from '@assets/img/sapato_destaque.svg'
 import { Link } from "react-router-dom";
 
 function IconDestaque() {

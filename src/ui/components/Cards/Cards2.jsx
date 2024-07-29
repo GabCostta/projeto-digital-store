@@ -1,4 +1,4 @@
-import "./Cards.css"
+import "@styles/Components/Cards/Cards.css"
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
