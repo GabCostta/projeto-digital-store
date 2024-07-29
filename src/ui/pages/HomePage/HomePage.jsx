@@ -1,20 +1,21 @@
 /* eslint-disable no-undef */
-import Layout from '@components/Layout/Layout.jsx'
-import Carousel from "@components/Carousel/Carousel";
-import Cards from "@components/Cards/Cards";
-import Cards2 from "@components/Cards/Cards2";
-import IconDestaque from "@components/IconDestaque/IconDestaque";
+import React, { useState, useEffect } from "react";
+import Layout from '@components/Layout/Layout.jsx';
+import Carousel from "@components/Carousel/Carousel.jsx";
+import Cards from "@components/Cards/Cards.jsx";
+import Cards2 from "@components/Cards/Cards2.jsx";
+import IconDestaque from "@components/IconDestaque/IconDestaque.jsx";
 import sapatoAzul from "@assets/img/sapato_card.png";
 import flechaRosa from "@assets/img/flecha_icon.svg";
-import CardDestaque from "@components/CardDestaque/CardDestaque";
+import CardDestaque from "@components/CardDestaque/CardDestaque.jsx";
 import "@styles/pages/HomePage/HomePage.css";
 import { Link } from "react-router-dom";
-import { Destaque } from "@components/Destaque/Destaque";
-import { useState, useEffect } from "react";
+import { Destaque } from "@components/Destaque/Destaque.jsx";
 import axios from "axios";
 
-function Home() {
+const Home = () => {
   const [character, setCharacter] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +26,6 @@ function Home() {
         setCharacter(response.data);
         console.log("API response:", response.data);
         setLoading(false);
-        console.log(`deu certo`);
       } catch (error) {
         console.log(`o erro foi ${error}`);
         setLoading(false);
@@ -35,56 +35,52 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <Layout />
+    <Layout>
       <Carousel />
       <CardDestaque />
       <IconDestaque />
-      {
-        <section className="container-produtos-em-alta">
-          <div className="produtos-em-alta">
-            <div className="topico-section">
-              <h1>Produtos em alta</h1>
-              <h2>
-                <Link to="/ProductList" className="link-ver-todos">
-                  Ver todos <img src={flechaRosa} alt="flecha" />
-                </Link>
-              </h2>
-            </div>
-            <div className="produto-em-alta-cards">
-              {Array.isArray(character) &&
-                character
-                  .slice(0, 10)
-                  .map((card) =>
-                    card.desconto === true ? (
-                      <Cards2
-                        key={card.id}
-                        oferta={card.valordesconto}
-                        foto={sapatoAzul}
-                        titulo={card.titulo}
-                        descricao={card.descricao}
-                        valorantigo={card.valorantigo}
-                        valoratual={card.valoratual}
-                      />
-                    ) : (
-                      <Cards
-                        key={card.id}
-                        foto={sapatoAzul}
-                        titulo={card.titulo}
-                        descricao={card.descricao}
-                        valorantigo={card.valorantigo}
-                        valoratual={card.valoratual}
-                      />
-                    )
-                  )}
-            </div>
+      <section className="container-produtos-em-alta">
+        <div className="produtos-em-alta">
+          <div className="topico-section">
+            <h1>Produtos em alta</h1>
+            <h2>
+              <Link to="/ProductList" className="link-ver-todos">
+                Ver todos <img src={flechaRosa} alt="flecha" />
+              </Link>
+            </h2>
           </div>
-        </section>
-      }
+          <div className="produto-em-alta-cards">
+            {Array.isArray(character) &&
+              character
+                .slice(0, 10)
+                .map((card) =>
+                  card.desconto === true ? (
+                    <Cards2
+                      key={card.id}
+                      oferta={card.valordesconto}
+                      foto={sapatoAzul}
+                      titulo={card.titulo}
+                      descricao={card.descricao}
+                      valorantigo={card.valorantigo}
+                      valoratual={card.valoratual}
+                    />
+                  ) : (
+                    <Cards
+                      key={card.id}
+                      foto={sapatoAzul}
+                      titulo={card.titulo}
+                      descricao={card.descricao}
+                      valorantigo={card.valorantigo}
+                      valoratual={card.valoratual}
+                    />
+                  )
+                )}
+          </div>
+        </div>
+      </section>
       <Destaque />
-      <Layout />
-    </>
+    </Layout>
   );
-}
+};
 
 export default Home;
