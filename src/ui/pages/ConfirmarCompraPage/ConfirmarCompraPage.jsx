@@ -1,7 +1,7 @@
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
+import Header from "@components/Header/Header";
+import Footer from "@components/Footer/Footer";
 
-function ConfirmarCompra() {
+function ConfirmarCompraPage() {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ function ConfirmarCompra() {
   );
 }
 
-export default ConfirmarCompra;
+export default ConfirmarCompraPage;

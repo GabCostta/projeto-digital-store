@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "../CarouselMenor/CarouselMenor.css";
-import tenisNike from "../../assets/img/tenis-nike-view.svg";
+import "@styles/Components/CarouselMenor/CarouselMenor.css";
+import tenisNike from "@assets/img/tenis-nike-view.svg";
 
 function CarouselMenor() {
   return (

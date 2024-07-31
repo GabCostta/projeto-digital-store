@@ -1,7 +1,7 @@
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
+import Header from "@components/Header/Header";
+import Footer from "@components/Footer/Footer";
 
-function Pedidos() {
+function PedidosPage() {
   return (
     <>
       <Header />
@@ -11,4 +11,4 @@ function Pedidos() {
   );
 }
 
-export default Pedidos;
+export default PedidosPage;

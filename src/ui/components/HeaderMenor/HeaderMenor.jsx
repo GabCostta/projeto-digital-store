@@ -1,5 +1,5 @@
-import "../HeaderMenor/HeaderMenor.css"
-import logo from '../../assets/img/logo.svg'
+import "@styles/Components/HeaderMenor/HeaderMenor.css"
+import logo from "@assets/img/logo.svg"
 import { Link } from "react-router-dom";
 
 function HeaderMenor() {

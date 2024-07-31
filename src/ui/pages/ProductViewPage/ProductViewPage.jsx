@@ -1,15 +1,15 @@
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
-import "./ProductViewPage.css";
-import Cards2 from "../../Components/Cards/Cards2";
-import Cards from "../../Components/Cards/Cards";
-import Carrousel from "../../Components/CarouselMenor/CarouselMenor";
-import sapatoAzul from "../../assets/img/sapato_card.png";
+import Header from "@components/Header/Header"
+import Footer from "@components/Footer/Footer"
+import "@styles/pages/ProductViewPage/ProductViewPage.css"
+import Cards2 from "@components/Cards/Cards2"
+import Cards from "@components/Cards/Cards"
+import Carrousel from "@components/CarouselMenor/CarouselMenor"
+import sapatoAzul from "@assets/img/sapato_card.png"
 import { useState, useEffect } from "react"
 import axios from "axios"
 
 //esse é o projeto atual
-function ProductView() {
+function ProductViewPage() {
   const [character, setCharacter] = useState([])
 
   useEffect(() => {
@@ -18,10 +18,12 @@ function ProductView() {
         const response = await axios.get("https://669111dd26c2a69f6e8e4d94.mockapi.io/products/products")
         setCharacter(response.data)
         console.log("API response:", response.data);
+        // eslint-disable-next-line no-undef
         setLoading(false)
         console.log(`deu certo`)
       } catch (error) {
         console.log(`o erro foi ${error}`)
+        // eslint-disable-next-line no-undef
         setLoading(false)
       }
     }
@@ -138,4 +140,4 @@ function ProductView() {
   );
 }
 
-export default ProductView;
+export default ProductViewPage;

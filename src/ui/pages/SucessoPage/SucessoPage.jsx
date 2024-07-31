@@ -1,16 +1,14 @@
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
-import CarouselMenor from "@components/CarouselMenor/CarouselMenor";
 
-function CartPage() {
+function SucessoPage() {
   return (
     <>
       <Header />
-      <h1>Cart</h1>
-      <CarouselMenor />
+      <h1>Sucesso!</h1>
       <Footer />
     </>
   );
 }
 
-export default CartPage;
+export default SucessoPage;

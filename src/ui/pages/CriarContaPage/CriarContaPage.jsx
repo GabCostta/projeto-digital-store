@@ -1,12 +1,12 @@
-import HeaderMenor from "../../Components/HeaderMenor/HeaderMenor";
-import Footer from "../../Components/Footer/Footer";
-import "../../Components/Main/MainCriarConta.css";
-import gmail from "../../assets/img/gmail.svg";
-import facebook from "../../assets/img/facebook.svg";
-import sapatos from "../../assets/img/dois_tenis_nike.png";
+import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
+import Footer from "@components/Footer/Footer";
+import "@styles/Components/Main/MainCriarConta.css";
+import gmail from "@assets/img/gmail.svg";
+import facebook from "@assets/img/facebook.svg";
+import sapatos from "@assets/img/dois_tenis_nike.png";
 import { Link } from "react-router-dom";
 
-function Criar() {
+function CriarContaPage() {
   return (
     <>
       <HeaderMenor />
@@ -44,4 +44,4 @@ function Criar() {
   );
 }
 
-export default Criar;
+export default CriarContaPage;

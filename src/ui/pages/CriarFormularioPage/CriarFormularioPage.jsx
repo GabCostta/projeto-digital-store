@@ -1,7 +1,7 @@
-import HeaderMenor from "../../Components/HeaderMenor/HeaderMenor";
-import Footer from "../../Components/Footer/Footer";
+import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
+import Footer from "@components/Footer/Footer";
 
-function CriarFormulario() {
+function CriarFormularioPage() {
   return (
     <>
       <HeaderMenor />
@@ -11,4 +11,4 @@ function CriarFormulario() {
   );
 }
 
-export default CriarFormulario;
+export default CriarFormularioPage;

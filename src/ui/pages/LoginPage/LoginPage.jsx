@@ -1,8 +1,8 @@
-import HeaderMenor from "../../Components/HeaderMenor/HeaderMenor";
-import Footer from "../../Components/Footer/Footer";
-import Main from "../../Components/Main/Main";
+import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
+import Footer from "@components/Footer/Footer";
+import Main from "@components//Main/Main";
 
-function Login() {
+function LoginPage () {
   return (
     <>
       <HeaderMenor />
@@ -12,4 +12,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;
