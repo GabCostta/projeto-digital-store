@@ -18,7 +18,7 @@ main {
 }
 
 main .fotoSapatos img {
-    width: 0rem;
+    width: 1rem;
 }
 
 .formulario {
@@ -182,12 +182,9 @@ main .fotoSapatos img {
     }
 
     main .fotoSapatos img {
-        width: 40vw;
+        width: 100%;
+        max-width: 400px;
         height: auto;
-        margin-left: 4rem;
-        align-self: flex-end;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
     }
 
     .formulario {
@@ -243,17 +240,5 @@ main .fotoSapatos img {
         flex-direction: row;
         justify-content: center;
         gap: 1.3rem;
-    }
-}
-
-@media (min-width:1440px) {
-    main .fotoSapatos img {
-        width: 40vw;
-        height: auto;
-        margin-left: 4rem;
-        align-self: flex-end;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        border: 1px green solid;
     }
 }
