@@ -1,12 +1,11 @@
-import Header from "@components/Header/Header";
-import Footer from "@components/Footer/Footer";
+import Layout from "@components/Layout/Layout"
 
 function InformacoesPage() {
   return (
     <>
-      <Header />
+      <Layout />
       <h1>Informacoes</h1>
-      <Footer />
+      <Layout />
     </>
   );
 }

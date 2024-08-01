@@ -1,12 +1,11 @@
-import Header from "@components/Header/Header";
-import Footer from "@components/Footer/Footer";
+import Layout from "@components/Layout/Layout"
 
 function PedidosPage() {
   return (
     <>
-      <Header />
+      <Layout />
       <h1>Pedidos</h1>
-      <Footer />
+      <Layout />
     </>
   );
 }

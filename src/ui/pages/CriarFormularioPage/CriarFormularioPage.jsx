@@ -1,12 +1,13 @@
 import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
-import Footer from "@components/Footer/Footer";
+import Layout from "@components/Layout/Layout"
 
 function CriarFormularioPage() {
   return (
     <>
+    <Layout>
       <HeaderMenor />
       <h1>CriarFormulario</h1>
-      <Footer />
+    </Layout>
     </>
   );
 }
