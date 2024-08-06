@@ -1,4 +1,4 @@
-import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
+import HeaderMenor from "@components/HeaderMenor/HeaderMenor"
 import Layout from "@components/Layout/Layout"
 
 function CriarFormularioPage() {
