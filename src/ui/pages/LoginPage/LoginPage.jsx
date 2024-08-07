@@ -1,13 +1,12 @@
-import HeaderMenor from "@components/HeaderMenor/HeaderMenor";
-import Footer from "@components/Footer/Footer";
+import Layout from "@components/Layout/Layout";
 import Main from "@components//Main/Main";
 
 function LoginPage () {
   return (
     <>
-      <HeaderMenor />
-      <Main />
-      <Footer />
+      <Layout>
+        <Main />
+      </Layout>
     </>
   );
 }
