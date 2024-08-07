@@ -1,45 +1,127 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
-import Header from "@components/Header/Header";
-import Footer from "@components/Footer/Footer";
-import CarouselMenor from "@components/CarouselMenor/CarouselMenor";
-import ProductCard from "@components/ProductCard/ProductCard";
-import BuyBox from "@components/Buybox/Buybox";
-import "@styles/pages/Cartpage/Cartpage.css"
+import React, { useState, useEffect } from "react";
+import Layout from "@components/Layout/Layout";
+import Cards2 from "@components/Cards/Cards2";
+import Cards from "@components/Cards/Cards";
+import sapatoAzul from "@assets/img/sapato_card.png";
+import axios from "axios";
+import "@styles/pages/Cartpage/Cartpage.css";
+
+function CartItem() {
+  return (
+    <div className="cart-item">
+      <div className="item-details">
+        <img src={sapatoAzul} alt="Tênis Nike Revolution 6 Next Nature Masculino" />
+        <div className="item-info">
+          <h2>Tênis Nike Revolution 6 Next Nature Masculino</h2>
+          <p>Cor: Vermelho / Branco</p>
+          <p>Tamanho: 42</p>
+        </div>
+      </div>
+      <div className="item-quantity">
+        <div>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+        <a href="#" className="remove-item">Remover item</a>
+      </div>
+      <div className="item-pricing">
+        <p className="original-price">R$ 219,00</p>
+        <p className="discounted-price">R$ 219,00</p>
+      </div>
+      <div className="item-pricing">
+        <p className="original-price">R$ 219,00</p>
+        <p className="discounted-price">R$ 219,00</p>
+      </div>
+    </div>
+  );
+}
+
+function CartSummary() {
+  return (
+    <div className="cart-summary">
+      <h2>RESUMO</h2>
+      <div className="summary-details">
+        <p>Subtotal: <span>R$ 219,00</span></p>
+        <p>Frete: <span>R$ 0,00</span></p>
+        <p>Desconto: <span>R$ 30,00</span></p>
+        <p>Total: <span className="total-price">R$ 219,00</span></p>
+        <p className="installments">ou 10x de R$ 21,00 sem juros</p>
+        <button className="continue-button">Continuar</button>
+      </div>
+    </div>
+  );
+}
 
 function CartPage() {
-  const products = [
-    { image: "/assets/img/sapato_card.png", name: "Product 1", price: "$100", rating: "★★★★☆" },
-    { image: "/assets/img/tenis.png", name: "Product 2", price: "$200", rating: "★★★☆☆" },
-    { image: "/assets/img/fone de ouvido.png", name: "Product 3", price: "$150", rating: "★★★★★" },
-    { image: "/assets/img/blusa.png", name: "Product 4", price: "$120", rating: "★★★★☆" },
-  ];
+  const [character, setCharacter] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://669111dd26c2a69f6e8e4d94.mockapi.io/products/products");
+        setCharacter(response.data);
+        console.log("API response:", response.data);
+      } catch (error) {
+        console.log(`o erro foi ${error}`);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <>
-      <Header />
-      <div className="layout">
-        <div className="gallery">
-          <div className="carousel">
-            <CarouselMenor />
+      <Layout>
+        <div className="cart-page">
+          <div className="cart-content">
+            <div className="cart-header">
+              <h2>MEU CARRINHO</h2>
+              <h2>QUANTIDADE</h2>
+              <h2>UNITÁRIO</h2>
+              <h2>TOTAL</h2>
+            </div>
+            <CartItem />
+            <div className="discount-shipping">
+              <div className="discount">
+                <input type="text" placeholder="Insira seu código" />
+                <button>OK</button>
+              </div>
+              <div className="shipping">
+                <input type="text" placeholder="Insira seu CEP" />
+                <button>OK</button>
+              </div>
+            </div>
           </div>
+          <CartSummary />
         </div>
-        <BuyBox />
-      </div>
-      <div className="section">
-        <div className="productList">
-          {products.map((product, index) => (
-            <ProductCard 
-              key={index}
-              image={product.image}
-              name={product.name}
-              price={product.price}
-              rating={product.rating}
-            />
-          ))}
-        </div>
-      </div>
-      <Footer />
+        <section className="produtos_relacionados">
+          <h5>Produtos relacionados</h5>
+          <div className="produto-em-alta-cards">
+            {Array.isArray(character) && character.slice(0, 4).map(card => (
+              card.desconto === true ? (
+                <Cards2
+                  key={card.id}
+                  oferta={card.valordesconto}
+                  foto={sapatoAzul}
+                  titulo={card.titulo}
+                  descricao={card.descricao}
+                  valorantigo={card.valorantigo}
+                  valoratual={card.valoratual}
+                />
+              ) : (
+                <Cards
+                  key={card.id}
+                  foto={sapatoAzul}
+                  titulo={card.titulo}
+                  descricao={card.descricao}
+                  valorantigo={card.valorantigo}
+                  valoratual={card.valoratual}
+                />
+              )
+            ))}
+          </div>
+        </section>
+      </Layout>
     </>
   );
 }
