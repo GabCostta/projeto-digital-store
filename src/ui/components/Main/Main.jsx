@@ -1,8 +1,9 @@
+// src/ui/Components/Main/Main.jsx
 import "@styles/Components/Main/Main.css";
 import { Link } from "react-router-dom";
+import sapatos from "@assets/img/dois_tenis_nike.png";
 import gmail from "@assets/img/gmail.svg";
 import facebook from "@assets/img/facebook.svg";
-import sapatos from "@assets/img/dois_tenis_nike.png";
 
 function Main() {
   return (
@@ -23,8 +24,20 @@ function Main() {
         <div className="outrologin">
           <p>Ou faça login com</p>
           <div className="img">
-            <Link to="https://www.google.com/intl/pt-BR/gmail/about/"><img src={gmail} alt="gmail" /></Link>
-            <Link to="https://www.facebook.com/"><img src={facebook} alt="facebook" /></Link>
+            <a
+              href="https://accounts.google.com/AccountChooser/signinchooser?service=merchants&continue=https%3A%2F%2Fmerchants.google.com%2Fmc%2Fproducts%2Fmethodselector%3Fa%3D719386599%26gtact%3D1&ddm=0&flowName=GlifWebSignIn&flowEntry=AccountChooser"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={gmail} alt="gmail" />
+            </a>
+            <a
+              href="https://www.facebook.com/login/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={facebook} alt="facebook" />
+            </a>
           </div>
         </div>
       </div>
