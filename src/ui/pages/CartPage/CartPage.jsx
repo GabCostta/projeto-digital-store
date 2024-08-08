@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layout from "@components/Layout/Layout";
 import Cards2 from "@components/Cards/Cards2";
 import Cards from "@components/Cards/Cards";
 import sapatoAzul from "@assets/img/sapato_card.png";
 import axios from "axios";
+import flechaRosa from "@assets/img/flecha_icon.svg";
+import { Link } from "react-router-dom";
 import "@styles/pages/Cartpage/Cartpage.css";
 
 function CartItem() {
@@ -24,10 +26,6 @@ function CartItem() {
           <button>+</button>
         </div>
         <a href="#" className="remove-item">Remover item</a>
-      </div>
-      <div className="item-pricing">
-        <p className="original-price">R$ 219,00</p>
-        <p className="discounted-price">R$ 219,00</p>
       </div>
       <div className="item-pricing">
         <p className="original-price">R$ 219,00</p>
@@ -70,59 +68,71 @@ function CartPage() {
   }, []);
 
   return (
-    <>
-      <Layout>
-        <div className="cart-page">
-          <div className="cart-content">
-            <div className="cart-header">
-              <h2>MEU CARRINHO</h2>
-              <h2>QUANTIDADE</h2>
-              <h2>UNITÁRIO</h2>
-              <h2>TOTAL</h2>
-            </div>
-            <CartItem />
-            <div className="discount-shipping">
-              <div className="discount">
-                <input type="text" placeholder="Insira seu código" />
-                <button>OK</button>
-              </div>
-              <div className="shipping">
-                <input type="text" placeholder="Insira seu CEP" />
-                <button>OK</button>
-              </div>
-            </div>
+    <Layout>
+      <div className="cart-page">
+        <div className="cart-content">
+          <div className="cart-header">
+            <h2>MEU CARRINHO</h2>
+            <h2>QUANTIDADE</h2>
+            <h2>UNITÁRIO</h2>
+            <h2>TOTAL</h2>
           </div>
-          <CartSummary />
+          <CartItem />
+          <section className="discount-shipping">
+            <div className="discount">
+              <strong>Calcular desconto</strong>
+              <input type="text" placeholder="Insira seu Cupom" />
+              <button>OK</button>
+            </div>
+            <div className="shipping">
+              <strong>Calcular Frete</strong>
+              <input type="text" placeholder="Insira seu CEP" />
+              <button>OK</button>
+            </div>
+          </section>
         </div>
-        <section className="produtos_relacionados">
-          <h5>Produtos relacionados</h5>
-          <div className="produto-em-alta-cards">
-            {Array.isArray(character) && character.slice(0, 4).map(card => (
-              card.desconto === true ? (
-                <Cards2
-                  key={card.id}
-                  oferta={card.valordesconto}
-                  foto={sapatoAzul}
-                  titulo={card.titulo}
-                  descricao={card.descricao}
-                  valorantigo={card.valorantigo}
-                  valoratual={card.valoratual}
-                />
-              ) : (
-                <Cards
-                  key={card.id}
-                  foto={sapatoAzul}
-                  titulo={card.titulo}
-                  descricao={card.descricao}
-                  valorantigo={card.valorantigo}
-                  valoratual={card.valoratual}
-                />
-              )
-            ))}
+        <CartSummary />
+      </div>
+      <section className="container-produtos-em-alta">
+        <div className="produtos-em-alta">
+          <div className="topico-section">
+            <h1>Produtos Relacionados</h1>
+            <h2>
+              <Link to="/ProductList" className="link-ver-todos">
+                Ver todos <img src={flechaRosa} alt="flecha" />
+              </Link>
+            </h2>
           </div>
-        </section>
-      </Layout>
-    </>
+          <div className="produto-em-alta-cards">
+            {Array.isArray(character) &&
+              character
+                .slice(0, 4)
+                .map((card) =>
+                  card.desconto === true ? (
+                    <Cards2
+                      key={card.id}
+                      oferta={card.valordesconto}
+                      foto={sapatoAzul}
+                      titulo={card.titulo}
+                      descricao={card.descricao}
+                      valorantigo={card.valorantigo}
+                      valoratual={card.valoratual}
+                    />
+                  ) : (
+                    <Cards
+                      key={card.id}
+                      foto={sapatoAzul}
+                      titulo={card.titulo}
+                      descricao={card.descricao}
+                      valorantigo={card.valorantigo}
+                      valoratual={card.valoratual}
+                    />
+                  )
+                )}
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 }
 
