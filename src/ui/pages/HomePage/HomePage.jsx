@@ -22,7 +22,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://669111dd26c2a69f6e8e4d94.mockapi.io/products/products"
+          "https://66c77b7e732bf1b79fa6ae9a.mockapi.io/api/produtos"
         );
         setCharacter(response.data);
         console.log("API response:", response.data);
